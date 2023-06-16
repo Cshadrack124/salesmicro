@@ -2,24 +2,30 @@ package com.codepride.salesmicro.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class user {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long id;
+    private int id;
     private String username;
     private String name;
     private int phone;
     private String email;
 
-    public long getId() {
+
+    public user(){
+
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
